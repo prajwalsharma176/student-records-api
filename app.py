@@ -2,7 +2,7 @@
 import os
 import sqlite3
 
-from flask import Flask, g, jsonify, request
+from flask import Flask, g, jsonify, render_template, request
 from werkzeug.exceptions import BadRequest, HTTPException
 
 
@@ -81,6 +81,10 @@ def create_app(test_config=None):
     @app.errorhandler(HTTPException)
     def http_error(exc):
         return error(exc.description, exc.code)
+
+    @app.get('/')
+    def index():
+        return render_template('index.html')
 
     @app.get('/students')
     def list_students():

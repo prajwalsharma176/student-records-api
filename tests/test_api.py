@@ -17,6 +17,11 @@ class StudentAPITest(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
+    def test_home_page(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b'Student records', response.data)
+
     def test_crud_and_database(self):
         created = self.client.post('/students', json=self.student)
         self.assertEqual(created.status_code, 201)

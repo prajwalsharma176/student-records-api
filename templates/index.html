@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132945">
+  <title>Student Records</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header class="topbar"><div class="top-inner"><div class="brand"><span class="brand-icon" aria-hidden="true">S</span><span>Student Records <small>MANAGEMENT</small></span></div><span class="top-note">Student directory</span></div></header>
+  <main class="container">
+    <div class="heading"><div><p class="eyebrow">STUDENT MANAGEMENT</p><h1>Student records</h1><p class="subtitle">Keep your student information organized in one place.</p></div><button id="add-button" class="primary">+ Add student</button></div>
+    <section class="summary" aria-label="Directory summary"><div class="summary-icon" aria-hidden="true">♧</div><div><span>Total students</span><strong id="student-count">—</strong></div><p>Your current student directory</p></section>
+    <section class="card" aria-labelledby="directory-title">
+      <div class="card-heading"><div><h2 id="directory-title">All students</h2><p>View and manage student details.</p></div><label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search students</span><input id="search" type="search" placeholder="Search students..."></label></div>
+      <div id="notice" role="status" aria-live="polite"></div>
+      <div class="table-wrap"><table><thead><tr><th>Student</th><th>Email address</th><th>Age</th><th>Course</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody id="student-list"></tbody></table></div>
+      <div id="empty" class="empty" hidden><div class="empty-icon" aria-hidden="true">▤</div><h3>No students found</h3><p id="empty-text">Add your first student to get started.</p></div>
+    </section>
+    <footer>Student Records <span>·</span> Built with Flask &amp; SQLite</footer>
+  </main>
+  <dialog id="student-dialog" aria-labelledby="dialog-title"><form id="student-form"><div class="modal-heading"><div><p class="eyebrow">STUDENT DETAILS</p><h2 id="dialog-title">Add student</h2><p id="dialog-description">Enter the student's details below.</p></div><button type="button" id="close-dialog" class="icon-button" aria-label="Close">×</button></div><div id="form-error" class="form-error" role="alert" hidden></div><div class="fields"><label>Full name<input name="name" required maxlength="255" placeholder="e.g. Asha Patel"></label><label>Email address<input name="email" type="email" required maxlength="255" placeholder="e.g. asha@example.com"></label><div class="field-row"><label>Age<input name="age" type="number" required min="1" max="120" step="1" placeholder="e.g. 21"></label><label>Course<input name="course" required maxlength="255" placeholder="e.g. Computer Science"></label></div></div><div class="modal-actions"><button type="button" id="cancel-dialog" class="secondary">Cancel</button><button type="submit" id="save-button" class="primary">Add student</button></div></form></dialog>
+</body></html>

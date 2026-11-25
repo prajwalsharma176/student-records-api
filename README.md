@@ -1,6 +1,6 @@
 # Student Records API
 
-A REST API built with Python, Flask, SQL, and SQLite to create, read, update, and delete student records. It validates input, returns JSON errors, and includes automated tests and a Postman collection.
+A student management web app and REST API built with Python, Flask, SQL, and SQLite. Use the browser interface to create, search, edit, and delete records, or use the JSON API directly. It includes automated tests and a Postman collection.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ pip install -r requirements.txt
 flask --app app:create_app run --debug
 ```
 
-The API runs at `http://127.0.0.1:5000`. The SQLite database and table are created automatically on startup at `instance/students.db`. Set the `DATABASE_PATH` environment variable before starting the app to use a different database file. Debug mode is for local development only.
+Open `http://127.0.0.1:5000/` to use the web interface. Click **Add student**, fill in the form, and save; use **Edit**, **Delete**, or search to manage records. The API runs on the same address. The SQLite database and table are created automatically on startup at `instance/students.db`. Set the `DATABASE_PATH` environment variable before starting the app to use a different database file. Debug mode is for local development only.
 
 ## Endpoints
 

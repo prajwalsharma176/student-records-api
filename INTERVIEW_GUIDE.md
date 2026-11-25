@@ -6,6 +6,10 @@ Use these points only after running and understanding the project. Be accurate a
 
 “I built a student records REST API using Python and Flask, with SQLite for storage. It provides endpoints to create, list, retrieve, update, and delete records. The API validates incoming JSON, uses parameterized SQL queries, and returns appropriate HTTP status codes for errors such as invalid input, missing students, and duplicate email addresses. I can test the endpoints with Postman and check stored records directly using SQL. Automated tests also exercise the complete CRUD flow and error cases against a temporary database.”
 
+## Browser interface
+
+The web interface is served by Flask at `/`. JavaScript uses `fetch` to call the same REST endpoints as Postman. After a successful change, it reloads the student list from the API. The search filters the loaded records in the browser.
+
 ## How a request flows
 
 1. A client such as Postman sends an HTTP request, for example `POST /students`, with a JSON body.
